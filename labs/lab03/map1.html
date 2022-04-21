@@ -38,3 +38,16 @@
 </body>
 
 </html>
+map.on('load', () => {
+    map.addSource('earthquakes', {
+        type: 'geojson',
+        data: 'assets/earthquakes.geojson'
+    });
+
+    map.addLayer({
+        'id': 'earthquakes-layer',
+        'type': 'circle',
+        'source': 'earthquakes'
+    });
+
+});
