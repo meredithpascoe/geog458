@@ -47,3 +47,16 @@
 { "type": "Feature", "properties": { "id": "us2000ai2d", "mag": 4.9, "time": 1504877000620, "felt": 5, "tsunami": 0 }, "geometry": { "type": "Point", "coordinates": [ 140.4519, 39.5355, 14.54 ] } }
 ]
 }
+map.on('load', () => {
+    map.addSource('earthquakes', {
+        type: 'geojson',
+        data: 'assets/earthquakes.geojson'
+    });
+
+    map.addLayer({
+        'id': 'earthquakes-layer',
+        'type': 'circle',
+        'source': 'earthquakes'
+    });
+
+});
